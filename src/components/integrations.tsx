@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 const integrations = [
   { name: "SalesForce", description: "Enhance your voice agents with HIPAA compliant CRM integration." },
@@ -10,9 +11,37 @@ const integrations = [
   { name: "Custom CRM", description: "Integrate with your custom systems for tailored solutions." }
 ];
 
+const integrationTestimonials = [
+  {
+    quote: "Integrating OmnisolAi with our SalesForce system was seamless. Setup took just hours, not weeks.",
+    name: "Amanda Roberts",
+    title: "IT Director, Healthcare Solutions"
+  },
+  {
+    quote: "The Epic Systems integration transformed our hospital's appointment process with 99.8% accuracy.",
+    name: "Dr. Robert Chen",
+    title: "Chief Medical Officer, Memorial Hospital"
+  },
+  {
+    quote: "GHL plus OmnisolAi automated our entire intake workflow. Conversions up 47% in first month.",
+    name: "Sarah Miller",
+    title: "Marketing Director, TechHealth"
+  },
+  {
+    quote: "HubSpot integration gave us complete visibility into our AI voice agent performance metrics.",
+    name: "Jason Park",
+    title: "Sales Operations Manager, CareConnect"
+  },
+  {
+    quote: "The custom integration with our proprietary systems was flawless. Their team understood our unique needs.",
+    name: "Marcus Johnson",
+    title: "CTO, GlobalCare Solutions"
+  }
+];
+
 const Integrations = () => {
   return (
-    <section className="py-24 bg-black">
+    <section className="py-24 bg-black" id="integrations">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <motion.div
@@ -58,7 +87,7 @@ const Integrations = () => {
           </a>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {integrations.map((item, index) => (
             <motion.div
               key={index}
@@ -72,6 +101,26 @@ const Integrations = () => {
               <p className="text-gray-400">{item.description}</p>
             </motion.div>
           ))}
+        </div>
+
+        <div id="all-integrations" className="mt-20">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl md:text-3xl font-bold text-white mb-8 text-center"
+          >
+            What our integration partners say
+          </motion.h3>
+          
+          <div className="h-60 overflow-hidden rounded-md bg-black/90">
+            <InfiniteMovingCards
+              items={integrationTestimonials}
+              direction="right"
+              speed="slow"
+            />
+          </div>
         </div>
       </div>
     </section>

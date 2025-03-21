@@ -1,30 +1,35 @@
 
 import { motion } from "framer-motion";
+import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
+import { GlowingEffect } from "./ui/glowing-effect";
 
 const testimonials = [
   {
     quote: "OmnisolAi has transformed our patient scheduling process. Our staff now focuses on patient care rather than administrative tasks.",
     name: "Dr. Sarah Johnson",
     title: "Medical Director, Northwest Healthcare",
-    avatar: "public/lovable-uploads/3e4c60cf-1d70-432d-8b64-b18352318b97.png"
+    avatar: "public/lovable-uploads/3e4c60cf-1d70-432d-8b64-b18352318b97.png",
+    icon: <Box className="h-4 w-4 text-black dark:text-neutral-400" />
   },
   {
     quote: "The voice agents handle over 80% of our customer inquiries, resulting in a 40% reduction in operational costs within the first quarter.",
     name: "Michael Chen",
     title: "CTO, Global Retail Solutions",
-    avatar: "public/lovable-uploads/22d68593-1c11-4408-b873-70c56a6f199a.png"
+    avatar: "public/lovable-uploads/22d68593-1c11-4408-b873-70c56a6f199a.png",
+    icon: <Settings className="h-4 w-4 text-black dark:text-neutral-400" />
   },
   {
     quote: "The seamless integration with our existing CRM system made implementation effortless. Our customers can't tell they're speaking with an AI.",
     name: "Jessica Williams",
     title: "Customer Experience Director, TechFlex Inc.",
-    avatar: "public/lovable-uploads/2abb48b7-31de-4921-bccf-1ac1890fd951.png"
+    avatar: "public/lovable-uploads/2abb48b7-31de-4921-bccf-1ac1890fd951.png",
+    icon: <Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />
   }
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-black">
+    <section className="py-24 bg-black" id="testimonials">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -58,35 +63,40 @@ const Testimonials = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-b from-gray-900 to-black rounded-xl p-8 border border-gray-800 hover:border-red-500/30 transition-all duration-300 flex flex-col h-full"
+              className="relative min-h-[14rem] rounded-xl p-2"
             >
-              <div className="flex-1">
-                <svg
-                  className="h-8 w-8 text-red-500 mb-4 opacity-50"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
-                </svg>
-                <p className="text-gray-300 mb-6 italic">{testimonial.quote}</p>
-              </div>
-              <div className="flex items-center">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="h-12 w-12 rounded-full mr-4 object-cover"
+              <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-xl border-0.75 p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D] bg-gradient-to-b from-gray-900 to-black border border-gray-800">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
                 />
-                <div>
-                  <p className="text-white font-medium">{testimonial.name}</p>
-                  <p className="text-gray-500 text-sm">{testimonial.title}</p>
+                <div className="flex-1 mb-4">
+                  <div className="w-fit rounded-lg border border-gray-600 p-2 mb-4">
+                    {testimonial.icon}
+                  </div>
+                  <p className="text-gray-300 italic text-base">{testimonial.quote}</p>
+                </div>
+                <div className="flex items-center">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="h-12 w-12 rounded-full mr-4 object-cover"
+                  />
+                  <div>
+                    <p className="text-white font-medium">{testimonial.name}</p>
+                    <p className="text-gray-500 text-sm">{testimonial.title}</p>
+                  </div>
                 </div>
               </div>
             </motion.div>

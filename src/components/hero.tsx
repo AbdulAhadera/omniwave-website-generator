@@ -1,23 +1,24 @@
 
-import { WavyBackground } from "./ui/wavy-background";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { Spotlight } from "./ui/spotlight";
 
 const Hero = () => {
   return (
-    <WavyBackground
-      colors={["#ff3c3c", "#ff3c8f", "#ff3cc6", "#ff3c3c", "#ff813c"]}
-      waveWidth={100}
-      backgroundFill="black"
-      blur={10}
-      speed="slow"
-      waveOpacity={0.5}
-      containerClassName="h-screen"
-    >
+    <div
+      className="relative h-screen flex overflow-hidden bg-black/[0.96] antialiased">
+      <div
+        className={cn(
+          "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",
+          "[background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
+        )} />
+      <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="max-w-4xl mx-auto text-center px-4"
+        className="relative z-10 max-w-4xl mx-auto text-center px-4 flex flex-col items-center justify-center"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -32,7 +33,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-transparent leading-tight mb-4"
         >
           Streamline the future with{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600 block mt-2">
@@ -71,7 +72,7 @@ const Hero = () => {
           </a>
         </motion.div>
       </motion.div>
-    </WavyBackground>
+    </div>
   );
 };
 

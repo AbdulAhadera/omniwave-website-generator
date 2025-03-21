@@ -13,12 +13,19 @@ const ThemeSwitcher = () => {
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.add(savedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.remove('light');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     } else if (prefersDark) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
     } else {
       setTheme("light");
       document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
@@ -26,7 +33,7 @@ const ThemeSwitcher = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     
-    // Update body class
+    // Update document class
     document.documentElement.classList.remove(theme);
     document.documentElement.classList.add(newTheme);
     

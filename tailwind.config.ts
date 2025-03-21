@@ -109,7 +109,22 @@ export default {
         'pulse-red': {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.5' }
-        }
+        },
+        spotlight: {
+          '0%': {
+            opacity: '0',
+            transform: 'translate(-72%, -62%) scale(0.5)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translate(-50%,-40%) scale(1)',
+          },
+        },
+        scroll: {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -122,7 +137,9 @@ export default {
         'slide-out-right': 'slide-out-right 0.3s ease-out',
         'enter': 'fade-in 0.3s ease-out, scale-in 0.2s ease-out',
         'exit': 'fade-out 0.3s ease-out, scale-out 0.2s ease-out',
-        'pulse-red': 'pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+        'pulse-red': 'pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        spotlight: 'spotlight 2s ease .75s 1 forwards',
+        scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       }
     }
   },
