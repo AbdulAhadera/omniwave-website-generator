@@ -12,16 +12,13 @@ const ThemeSwitcher = () => {
     
     if (savedTheme) {
       setTheme(savedTheme);
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-      document.documentElement.classList.toggle('light', savedTheme === 'light');
+      document.documentElement.className = savedTheme;
     } else if (prefersDark) {
       setTheme("dark");
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
+      document.documentElement.className = "dark";
     } else {
       setTheme("light");
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
+      document.documentElement.className = "light";
     }
   }, []);
 
@@ -30,8 +27,7 @@ const ThemeSwitcher = () => {
     setTheme(newTheme);
     
     // Update document class
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-    document.documentElement.classList.toggle('light', newTheme === 'light');
+    document.documentElement.className = newTheme;
     
     // Save preference
     localStorage.setItem("theme", newTheme);

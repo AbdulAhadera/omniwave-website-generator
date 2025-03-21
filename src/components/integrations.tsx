@@ -76,8 +76,10 @@ const Integrations = () => {
           </motion.p>
         </div>
 
-        <div className="py-8">
-          <InfiniteMovingCards items={integrationItems} direction="right" speed="slow" />
+        <div className="py-8 relative overflow-hidden">
+          <div className="h-[10rem] w-full bg-black overflow-hidden">
+            <InfiniteMovingCards items={integrationItems} direction="right" speed="slow" />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">

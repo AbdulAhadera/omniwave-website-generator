@@ -58,7 +58,7 @@ const Navbar = () => {
             <a onClick={() => scrollToSection('features')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
               Services
             </a>
-            <a onClick={() => scrollToSection('industries')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
+            <a onClick={() => scrollToSection('integrations')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
               Industries
             </a>
             <a onClick={() => scrollToSection('demo')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
@@ -112,7 +112,7 @@ const Navbar = () => {
                 Services
               </a>
               <a
-                onClick={() => scrollToSection('industries')}
+                onClick={() => scrollToSection('integrations')}
                 className="text-white py-2 hover:text-red-400 transition-colors cursor-pointer"
               >
                 Industries
