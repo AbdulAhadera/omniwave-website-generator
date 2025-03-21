@@ -6,6 +6,7 @@ import { Spotlight } from "./ui/spotlight";
 const Hero = () => {
   return (
     <div
+      id="hero"
       className="relative h-screen flex overflow-hidden bg-black/[0.96] antialiased">
       <div
         className={cn(

@@ -12,12 +12,8 @@ const ThemeSwitcher = () => {
     
     if (savedTheme) {
       setTheme(savedTheme);
-      document.documentElement.classList.add(savedTheme);
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.remove('light');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+      document.documentElement.classList.toggle('light', savedTheme === 'light');
     } else if (prefersDark) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
@@ -34,8 +30,8 @@ const ThemeSwitcher = () => {
     setTheme(newTheme);
     
     // Update document class
-    document.documentElement.classList.remove(theme);
-    document.documentElement.classList.add(newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    document.documentElement.classList.toggle('light', newTheme === 'light');
     
     // Save preference
     localStorage.setItem("theme", newTheme);

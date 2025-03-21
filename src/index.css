@@ -43,6 +43,10 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --slate-800: rgba(30, 41, 59, 0.8);
+    --slate-900: rgba(15, 23, 42, 0.8);
+    --black: #000;
   }
 
   .dark {
@@ -82,6 +86,10 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --slate-800: rgba(30, 41, 59, 0.8);
+    --slate-900: rgba(15, 23, 42, 0.8);
+    --black: #000;
   }
 }
 
@@ -90,13 +98,18 @@
     @apply border-border;
   }
 
-  body {
+  html {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
   }
 
-  html {
-    scroll-behavior: smooth;
+  .light body {
+    @apply bg-white text-gray-900;
+  }
+
+  .dark body {
+    @apply bg-black text-white;
   }
 
   ::-webkit-scrollbar {

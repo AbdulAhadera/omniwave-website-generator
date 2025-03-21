@@ -2,48 +2,49 @@
 import { motion } from "framer-motion";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
-const integrations = [
-  { name: "SalesForce", description: "Enhance your voice agents with HIPAA compliant CRM integration." },
-  { name: "Epic Systems", description: "HIPAA compliant integration for secure patient data and appointment bookings." },
-  { name: "GHL", description: "Revolutionize your marketing funnels with AI voice agents." },
-  { name: "HubSpot", description: "Optimize CRM operations with seamless voice intelligence." },
-  { name: "PipeDrive", description: "Streamline appointment reminders with direct pipeline connections." },
-  { name: "Custom CRM", description: "Integrate with your custom systems for tailored solutions." }
-];
-
-const integrationTestimonials = [
+const integrationItems = [
   {
-    quote: "Integrating OmnisolAi with our SalesForce system was seamless. Setup took just hours, not weeks.",
-    name: "Amanda Roberts",
-    title: "IT Director, Healthcare Solutions"
+    quote: "Loops",
+    name: "CRM & Marketing",
+    title: "Integration Partner",
   },
   {
-    quote: "The Epic Systems integration transformed our hospital's appointment process with 99.8% accuracy.",
-    name: "Dr. Robert Chen",
-    title: "Chief Medical Officer, Memorial Hospital"
+    quote: "MessageBird",
+    name: "Communication",
+    title: "Integration Partner",
   },
   {
-    quote: "GHL plus OmnisolAi automated our entire intake workflow. Conversions up 47% in first month.",
-    name: "Sarah Miller",
-    title: "Marketing Director, TechHealth"
+    quote: "Zapier",
+    name: "Automation",
+    title: "Integration Partner",
   },
   {
-    quote: "HubSpot integration gave us complete visibility into our AI voice agent performance metrics.",
-    name: "Jason Park",
-    title: "Sales Operations Manager, CareConnect"
+    quote: "TED",
+    name: "Content",
+    title: "Integration Partner",
   },
   {
-    quote: "The custom integration with our proprietary systems was flawless. Their team understood our unique needs.",
-    name: "Marcus Johnson",
-    title: "CTO, GlobalCare Solutions"
-  }
+    quote: "Dropbox",
+    name: "Storage",
+    title: "Integration Partner",
+  },
+  {
+    quote: "Discord",
+    name: "Communication",
+    title: "Integration Partner",
+  },
+  {
+    quote: "Upwork",
+    name: "Freelancing",
+    title: "Integration Partner",
+  },
 ];
 
 const Integrations = () => {
   return (
     <section className="py-24 bg-black" id="integrations">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-16">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -51,7 +52,7 @@ const Integrations = () => {
             transition={{ duration: 0.5 }}
             className="inline-block bg-red-500/10 rounded-full px-4 py-1 mb-4 border border-red-500/20"
           >
-            <span className="text-red-400">BRING YOUR WORK TOGETHER</span>
+            <span className="text-red-400">INTEGRATIONS</span>
           </motion.div>
           
           <motion.h2
@@ -61,7 +62,7 @@ const Integrations = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
           >
-            Integration with all your favorite software
+            20,104+ Integration Support
           </motion.h2>
           
           <motion.p
@@ -69,58 +70,64 @@ const Integrations = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-gray-400 max-w-3xl mx-auto"
+            className="text-lg text-gray-400 max-w-3xl"
           >
-            Through our advanced AI technology, our voice agents seamlessly integrate with all your platforms and software. The revolutionary future is here.
+            Connect OmnisolAi with your existing software ecosystem to create seamless workflows and maximize efficiency.
           </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex justify-center mb-12"
-        >
-          <a href="#all-integrations" className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 border border-gray-800">
-            View All Integrations
-          </a>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {integrations.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="bg-gray-900/30 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-red-500/30 transition-all duration-300"
-            >
-              <h3 className="text-xl font-bold text-white mb-3">{item.name}</h3>
-              <p className="text-gray-400">{item.description}</p>
-            </motion.div>
-          ))}
+        <div className="py-8">
+          <InfiniteMovingCards items={integrationItems} direction="right" speed="slow" />
         </div>
 
-        <div id="all-integrations" className="mt-20">
-          <motion.h3
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-2xl md:text-3xl font-bold text-white mb-8 text-center"
+            className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6"
           >
-            What our integration partners say
-          </motion.h3>
+            <div className="h-12 w-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">Seamless Integration</h3>
+            <p className="text-gray-400">Connect our AI voice agents with your existing CRM, ERP, and scheduling systems without disruption.</p>
+          </motion.div>
           
-          <div className="h-60 overflow-hidden rounded-md bg-black/90">
-            <InfiniteMovingCards
-              items={integrationTestimonials}
-              direction="right"
-              speed="slow"
-            />
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6"
+          >
+            <div className="h-12 w-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">Data Synchronization</h3>
+            <p className="text-gray-400">Real-time synchronization ensures all customer information and interactions remain up-to-date across platforms.</p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6"
+          >
+            <div className="h-12 w-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">API Access</h3>
+            <p className="text-gray-400">Custom API endpoints allow developers to create unique integrations specific to your business needs.</p>
+          </motion.div>
         </div>
       </div>
     </section>
