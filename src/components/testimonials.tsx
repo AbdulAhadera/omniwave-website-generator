@@ -8,21 +8,21 @@ const testimonials = [
     quote: "OmnisolAi has transformed our patient scheduling process. Our staff now focuses on patient care rather than administrative tasks.",
     name: "Dr. Sarah Johnson",
     title: "Medical Director, Northwest Healthcare",
-    avatar: "../lovable-uploads/3e4c60cf-1d70-432d-8b64-b18352318b97.png",
+    avatar: "../lovable-uploads/sarah.jpeg",
     icon: <Box className="h-4 w-4 text-black dark:text-neutral-400" />
   },
   {
     quote: "The voice agents handle over 80% of our customer inquiries, resulting in a 40% reduction in operational costs within the first quarter.",
     name: "Michael Chen",
     title: "CTO, Global Retail Solutions",
-    avatar: "../lovable-uploads/22d68593-1c11-4408-b873-70c56a6f199a.png",
+    avatar: "../lovable-uploads/michael.jpeg",
     icon: <Settings className="h-4 w-4 text-black dark:text-neutral-400" />
   },
   {
     quote: "The seamless integration with our existing CRM system made implementation effortless. Our customers can't tell they're speaking with an AI.",
     name: "Jessica Williams",
     title: "Customer Experience Director, TechFlex Inc.",
-    avatar: "../lovable-uploads/2abb48b7-31de-4921-bccf-1ac1890fd951.png",
+    avatar: "../lovable-uploads/jessica.jpeg",
     icon: <Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />
   }
 ];
