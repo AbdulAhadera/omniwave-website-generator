@@ -6,7 +6,7 @@ import Features from "@/components/features";
 import Process from "@/components/process";
 import AiDemo from "@/components/ai-demo";
 import Testimonials from "@/components/testimonials";
-import Pricing from "@/components/pricing";
+//import Pricing from "@/components/pricing"; 
 import FAQ from "@/components/faq";
 import Contact from "@/components/contact";
 import Integrations from "@/components/integrations";
@@ -21,7 +21,6 @@ const Index = () => {
       <AiDemo />
       <Integrations />
       <Testimonials />
-      <Pricing />
       <FAQ />
       <Contact />
       <Footer />
