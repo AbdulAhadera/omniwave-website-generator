@@ -14,7 +14,7 @@ const Hero = () => {
           "[background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
         )} />
       <Spotlight className="-top-40 left-0 md:-top-20 md:left-60" fill="white" />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -27,9 +27,9 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="inline-block bg-black/30 backdrop-blur-sm rounded-full px-4 py-1 mb-8 border border-white/10"
         >
-          <span className="text-white">The Future Is Here.</span>
+          {/* <span className="text-white">The Future Is Here.</span> */}
         </motion.div>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,18 +41,18 @@ const Hero = () => {
             Voice-Driven Intelligence
           </span>
         </motion.h1>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
           className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto"
         >
-          Through our advanced AI technology, we empower businesses and hospitals 
-          with revolutionary voice agents designed to enhance customer service, streamline 
+          Through our advanced AI technology, we empower businesses and hospitals
+          with revolutionary voice agents designed to enhance customer service, streamline
           appointment bookings, and reduce operational costs.
         </motion.p>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
