@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import ThemeSwitcher from "./theme-switcher";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,9 +33,16 @@ const Navbar = () => {
   };
 
   const scrollToSection = (id) => {
+    closeMenu();
+    
+    if (!isHomePage) {
+      // If not on home page, navigate to home first
+      window.location.href = `/#${id}`;
+      return;
+    }
+    
     const element = document.getElementById(id);
     if (element) {
-      closeMenu();
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -46,15 +55,14 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/80 backdrop-blur-lg" 
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/80 backdrop-blur-lg`}
     >
       <div className="container mx-auto px-4 md:px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-white">
+            <Link to="/" className="text-2xl font-bold text-white">
               OmnisolAi
-            </a>
+            </Link>
           </div>
 
           <nav className="hidden md:flex items-center md:justify-between ">

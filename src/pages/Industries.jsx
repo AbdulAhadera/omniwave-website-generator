@@ -117,7 +117,7 @@ const Industries = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-16 text-center"
           >
-            <a href="#contact" className="bg-red-500 hover:bg-red-600 transition-colors text-white px-8 py-3 rounded-full font-medium inline-block">
+            <a href="/#contact" className="bg-red-500 hover:bg-red-600 transition-colors text-white px-8 py-3 rounded-full font-medium inline-block">
               Contact Us For Custom Solutions
             </a>
           </motion.div>
