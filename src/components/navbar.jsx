@@ -1,158 +1,139 @@
 
 import { useState, useEffect } from "react";
+import ThemeSwitcher from "./theme-switcher";
 import { Menu } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const isHomePage = location.pathname === "/";
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
-  const scrollToSection = (sectionId) => {
-    setIsMobileMenuOpen(false);
-    
-    if (isHomePage) {
-      // If already on home page, just scroll
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      // If on different page, navigate to home page with hash
-      navigate(`/#${sectionId}`);
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMenuOpen(false);
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/80 backdrop-blur-md py-4"
-          : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-black/30 backdrop-blur-md border-b border-white/10"
+        : "bg-transparent"
+        }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
-          <a href="/" className="text-xl md:text-2xl font-bold text-white">
-            OmnisolAi
-          </a>
-
-          <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex items-center space-x-6">
-              <button
-                onClick={() => scrollToSection("features")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Features
-              </button>
-              <button
-                onClick={() => scrollToSection("process")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Process
-              </button>
-              <a
-                href="/industries"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Industries
-              </a>
-              <button
-                onClick={() => scrollToSection("testimonials")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Testimonials
-              </button>
-              <button
-                onClick={() => scrollToSection("faq")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                FAQ
-              </button>
-            </nav>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-full transition-colors"
-            >
-              Contact Us
-            </button>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center">
+            <a href="#" onClick={() => scrollToSection('hero')} className="text-white font-bold text-xl flex items-center">
+              <span className="text-2xl font-semibold tracking-tight">OMNI</span>
+              <span className="text-red-500 font-semibold text-2xl tracking-tight">SOL</span>
+              <span className="text-white text-2xl font-light">Ai</span>
+            </a>
           </div>
 
-          <button
-            className="block md:hidden text-white p-2"
-            onClick={toggleMobileMenu}
-            aria-label="Menu"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
+          <nav className="hidden md:flex items-center justify-between gap-8">
+            <a onClick={() => scrollToSection('hero')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
+              Home222
+            </a>
+            <a onClick={() => scrollToSection('features')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
+              Services
+            </a>
+            <a onClick={() => scrollToSection('integrations')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
+              Industries
+            </a>
+            <a onClick={() => scrollToSection('demo')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
+              AI Demo
+            </a>
+            <a onClick={() => scrollToSection('about')} className="text-white hover:text-red-400 transition-colors cursor-pointer">
+              About
+            </a>
+            <ThemeSwitcher />
+            <a
+              onClick={() => scrollToSection('contact')}
+              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 px-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer"
+            >
+              Contact Us
+            </a>
+          </nav>
+
+          <div className="flex items-center gap-4 md:hidden">
+            <ThemeSwitcher />
+            <button
+              className="text-white p-2 focus:outline-none"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </div>
 
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-black border-t border-gray-800 mt-2"
+            className="md:hidden bg-black/80 backdrop-blur-lg border-t border-white/10"
           >
-            <div className="container mx-auto px-4 py-4">
-              <nav className="flex flex-col space-y-4">
-                <button
-                  onClick={() => scrollToSection("features")}
-                  className="text-gray-300 hover:text-white transition-colors py-2"
-                >
-                  Features
-                </button>
-                <button
-                  onClick={() => scrollToSection("process")}
-                  className="text-gray-300 hover:text-white transition-colors py-2"
-                >
-                  Process
-                </button>
-                <a
-                  href="/industries"
-                  className="text-gray-300 hover:text-white transition-colors py-2"
-                >
-                  Industries
-                </a>
-                <button
-                  onClick={() => scrollToSection("testimonials")}
-                  className="text-gray-300 hover:text-white transition-colors py-2"
-                >
-                  Testimonials
-                </button>
-                <button
-                  onClick={() => scrollToSection("faq")}
-                  className="text-gray-300 hover:text-white transition-colors py-2"
-                >
-                  FAQ
-                </button>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-full transition-colors"
-                >
-                  Contact Us
-                </button>
-              </nav>
+            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+              <a
+                onClick={() => scrollToSection('hero')}
+                className="text-white py-2 hover:text-red-400 transition-colors cursor-pointer"
+              >
+                Home
+              </a>
+              <a
+                onClick={() => scrollToSection('features')}
+                className="text-white py-2 hover:text-red-400 transition-colors cursor-pointer"
+              >
+                Services
+              </a>
+              <a
+                onClick={() => scrollToSection('integrations')}
+                className="text-white py-2 hover:text-red-400 transition-colors cursor-pointer"
+              >
+                Industries
+              </a>
+              <a
+                onClick={() => scrollToSection('demo')}
+                className="text-white py-2 hover:text-red-400 transition-colors cursor-pointer"
+              >
+                AI Demo
+              </a>
+              <a
+                onClick={() => scrollToSection('about')}
+                className="text-white py-2 hover:text-red-400 transition-colors cursor-pointer"
+              >
+                About
+              </a>
+              <a
+                onClick={() => scrollToSection('contact')}
+                className="bg-gradient-to-r from-red-500 to-red-600 text-white py-2 px-4 rounded-full text-center font-medium cursor-pointer"
+              >
+                Contact Us
+              </a>
             </div>
           </motion.div>
         )}
