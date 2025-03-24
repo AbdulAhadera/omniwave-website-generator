@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 const TOAST_LIMIT = 1
@@ -8,7 +9,7 @@ const actionTypes = {
   UPDATE_TOAST: "UPDATE_TOAST",
   DISMISS_TOAST: "DISMISS_TOAST",
   REMOVE_TOAST: "REMOVE_TOAST",
-} 
+}
 
 let count = 0
 
