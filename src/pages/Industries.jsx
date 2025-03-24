@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Headphones, ShieldCheck, Users, Building2, Hospital, Briefcase, Server, GraduationCap, ShoppingCart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const industriesData = [
   {
@@ -39,6 +40,7 @@ const industriesData = [
 ];
 
 const Industries = () => {
+  const navigate = useNavigate();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -58,6 +60,10 @@ const Industries = () => {
         duration: 0.6,
       },
     },
+  };
+
+  const handleContactClick = () => {
+    navigate("/#contact");
   };
 
   return (
@@ -117,9 +123,12 @@ const Industries = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-16 text-center"
           >
-            <a href="/#contact" className="bg-red-500 hover:bg-red-600 transition-colors text-white px-8 py-3 rounded-full font-medium inline-block">
+            <button 
+              onClick={handleContactClick}
+              className="bg-red-500 hover:bg-red-600 transition-colors text-white px-8 py-3 rounded-full font-medium inline-block"
+            >
               Contact Us For Custom Solutions
-            </a>
+            </button>
           </motion.div>
         </div>
       </section>

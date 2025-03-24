@@ -9,6 +9,7 @@ import Testimonials from "../components/testimonials";
 import FAQ from "../components/faq";
 import Contact from "../components/contact";
 import Integrations from "../components/integrations";
+import VapiAssistant from "../components/vapi-assistant";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
       <Process />
       <AiDemo />
       <Integrations />
+      <VapiAssistant />
       <Testimonials />
       <FAQ />
       <Contact />
