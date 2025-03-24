@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { toast } from "../components/ui/sonner";
+import { toast } from "sonner";
 import { motion } from 'framer-motion';
 import { Mic, MicOff, Volume2, VolumeX } from 'lucide-react';
 
