@@ -22,7 +22,7 @@ const Process = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-24 bg-gradient-to-b from-[var(--color-background)] to-[var(--color-boxes)]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -64,7 +64,7 @@ const Process = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800 hover:border-red-500/30 transition-all duration-300"
+              className="box-background backdrop-blur-sm rounded-xl p-8 border border-gray-800 hover:border-red-500/30 transition-all duration-300"
             >
               <div className="bg-red-500/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 text-red-500">
                 {step.icon}

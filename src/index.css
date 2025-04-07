@@ -5,6 +5,14 @@
 
 @layer base {
   :root {
+    /* Theme colors from provided image */
+    --color-background: #141414;
+    --color-boxes: #222831;
+    --color-gradient-from: #007bff;
+    --color-gradient-to: #00BFFF;
+    --color-accent: #FFD700; /* For necessary small details */
+    
+    /* Existing variables */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -102,14 +110,17 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-behavior: smooth;
+    background-color: var(--color-background);
   }
 
   .light body {
-    @apply bg-white text-gray-900;
+    background-color: var(--color-background);
+    @apply text-white;
   }
 
   .dark body {
-    @apply bg-black text-white;
+    background-color: var(--color-background);
+    @apply text-white;
   }
 
   ::-webkit-scrollbar {
@@ -143,4 +154,60 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600;
   }
+  
+  .heading-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-gradient-from)] to-[var(--color-gradient-to)];
+  }
+  
+  .box-background {
+    background-color: var(--color-boxes);
+  }
+  
+  .accent-detail {
+    color: var(--color-accent);
+  }
+}
+
+/* Keep existing styles */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
