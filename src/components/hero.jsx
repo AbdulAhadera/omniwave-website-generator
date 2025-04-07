@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="relative h-screen flex overflow-hidden" style={{ backgroundColor: "var(--color-background)" }}>
+      className="relative h-screen flex overflow-hidden" style={{ backgroundColor: "#141414" }}>
       <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",
@@ -38,7 +38,7 @@ const Hero = () => {
           className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-transparent leading-tight mb-4"
         >
           Streamline the future with{" "}
-          <span className="heading-gradient block mt-2">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#007bff] to-[#00BFFF] block mt-2">
             Voice-Driven Intelligence
           </span>
         </motion.h1>
@@ -62,7 +62,7 @@ const Hero = () => {
         >
           <Link
             to="/contact-form"
-            className="bg-gradient-to-r from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-[#007bff] to-[#00BFFF] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
           >
             Get Started
           </Link>

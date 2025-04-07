@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24" style={{ backgroundColor: "var(--color-background)" }}>
+    <section id="contact" className="py-24" style={{ backgroundColor: "#141414" }}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -44,7 +44,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="box-background p-8 md:p-12 rounded-2xl border border-gray-800"
+            className="p-8 md:p-12 rounded-2xl border border-gray-800" style={{ backgroundColor: "#222831" }}
           >
             <div className="grid gap-6">
               <div>
@@ -70,7 +70,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="box-background p-8 md:p-12 rounded-2xl border border-gray-800 flex flex-col justify-between"
+            className="p-8 md:p-12 rounded-2xl border border-gray-800 flex flex-col justify-between" style={{ backgroundColor: "#222831" }}
           >
             <div className="mb-8">
               <h3 className="text-2xl font-bold mb-4 text-white">Experience Our Demo</h3>
@@ -132,7 +132,7 @@ const Contact = () => {
 
             <Link
               to="/contact-form"
-              className="mt-8 inline-block bg-gradient-to-r from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center"
+              className="mt-8 inline-block bg-gradient-to-r from-[#007bff] to-[#00BFFF] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center"
             >
               Request Demo
             </Link>
