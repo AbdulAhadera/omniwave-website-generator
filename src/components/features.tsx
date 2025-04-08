@@ -4,19 +4,19 @@ import { Headphones, ShieldCheck, Users } from "lucide-react";
 
 const features = [
   {
-    icon: <Headphones className="h-12 w-12 text-red-500" />,
+    icon: <Headphones className="h-12 w-12 text-[#00A3FF]" />,
     title: "Unlimited Calls",
     description:
       "Never worry about call limits. OmnisolAi's Voice Intelligence Agents handle unlimited calls, ensuring you never miss an opportunity.",
   },
   {
-    icon: <ShieldCheck className="h-12 w-12 text-red-500" />,
+    icon: <ShieldCheck className="h-12 w-12 text-[#00A3FF]" />,
     title: "Highly Compliant",
     description:
       "Our systems are compliant with all major privacy regulations, keeping your patient and customer data secure at all times.",
   },
   {
-    icon: <Users className="h-12 w-12 text-red-500" />,
+    icon: <Users className="h-12 w-12 text-[#00A3FF]" />,
     title: "Custom Personalities",
     description:
       "Choose from thousands of personalities for your voice agents, from professional to friendly, to match your brand identity perfectly.",
@@ -46,7 +46,7 @@ const Features = () => {
   };
 
   return (
-    <section id="features" className="py-24 bg-black">
+    <section id="features" className="py-24 bg-[#0a0a0a] grid-background">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial="hidden"
@@ -59,7 +59,7 @@ const Features = () => {
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { duration: 0.5 } },
             }}
-            className="px-4 py-1 bg-red-500/10 text-red-500 rounded-full border border-red-500/20 mb-4"
+            className="px-4 py-1 bg-[#00A3FF]/20 text-[#00A3FF] rounded-full border border-[#00A3FF]/30 mb-4"
           >
             KEY FEATURES
           </motion.span>
@@ -77,7 +77,7 @@ const Features = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
             }}
-            className="text-lg text-gray-400 max-w-3xl"
+            className="text-lg text-gray-300 max-w-3xl"
           >
             Free yourself from the limits of traditional staffing. Embrace the AI renaissance with our
             scalable voice intelligence solutions.
@@ -95,9 +95,9 @@ const Features = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-xl p-8 hover:border-red-500/30 transition-all duration-300 flex flex-col items-center text-center"
+              className="bg-[#0f1722] border border-gray-800 rounded-xl p-8 hover:border-[#00A3FF]/30 transition-all duration-300 flex flex-col items-center text-center"
             >
-              <div className="p-3 rounded-full bg-red-500/10 mb-6">{feature.icon}</div>
+              <div className="p-3 rounded-full bg-[#00A3FF]/10 mb-6">{feature.icon}</div>
               <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
             </motion.div>

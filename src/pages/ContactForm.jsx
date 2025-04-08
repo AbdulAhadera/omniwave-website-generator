@@ -66,7 +66,7 @@ const ContactForm = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#141414" }}>
+    <div className="min-h-screen flex flex-col grid-background">
       <Navbar />
       
       <div className="flex-grow container mx-auto px-4 py-12">
@@ -75,7 +75,7 @@ const ContactForm = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-md mx-auto box-background rounded-xl p-8 shadow-lg border border-gray-700"
+            className="max-w-md mx-auto bg-[#0f1722] rounded-xl p-8 shadow-lg border border-gray-700"
           >
             <h2 className="text-2xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#007bff] to-[#00BFFF]">
               Request Demo Call
@@ -138,7 +138,7 @@ const ContactForm = () => {
               
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-gradient-to-r from-[#007bff] to-[#00BFFF] text-white font-medium rounded-lg hover:opacity-90 transition duration-300"
+                className="w-full py-3 px-4 bg-[#00A3FF] text-white font-medium rounded-lg hover:opacity-90 transition duration-300"
               >
                 Start Demo Call
               </button>

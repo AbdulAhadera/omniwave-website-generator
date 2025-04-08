@@ -24,48 +24,48 @@ export default {
     },
     extend: {
       colors: {
-        border: '#e5e7eb',
-        input: '#e5e7eb',
-        ring: '#1f2937',
-        background: '#ffffff',
-        foreground: '#1f2937',
+        border: '#2a2a2a',
+        input: '#2a2a2a',
+        ring: '#404040',
+        background: '#0a0a0a',
+        foreground: '#ffffff',
         primary: {
-          DEFAULT: '#ef4444',
+          DEFAULT: '#00A3FF',
           foreground: '#ffffff'
         },
         secondary: {
-          DEFAULT: '#f3f4f6',
-          foreground: '#1f2937'
+          DEFAULT: '#171717',
+          foreground: '#ffffff'
         },
         destructive: {
           DEFAULT: '#b91c1c',
           foreground: '#ffffff'
         },
         muted: {
-          DEFAULT: '#f3f4f6',
-          foreground: '#6b7280'
+          DEFAULT: '#171717',
+          foreground: '#a3a3a3'
         },
         accent: {
-          DEFAULT: '#f3f4f6',
-          foreground: '#1f2937'
+          DEFAULT: '#171717',
+          foreground: '#ffffff'
         },
         popover: {
-          DEFAULT: '#ffffff',
-          foreground: '#1f2937'
+          DEFAULT: '#0f1722',
+          foreground: '#ffffff'
         },
         card: {
-          DEFAULT: '#ffffff',
-          foreground: '#1f2937'
+          DEFAULT: '#0f1722',
+          foreground: '#ffffff'
         },
         sidebar: {
-          DEFAULT: '#f9fafb',
-          foreground: '#4b5563',
-          primary: '#1f2937',
-          'primary-foreground': '#f9fafb',
-          accent: '#f3f4f5',
-          'accent-foreground': '#1f2937',
-          border: '#e5e7eb',
-          ring: '#3b82f6'
+          DEFAULT: '#0f1722',
+          foreground: '#a3a3a3',
+          primary: '#00A3FF',
+          'primary-foreground': '#ffffff',
+          accent: '#1a1a1a',
+          'accent-foreground': '#ffffff',
+          border: '#2a2a2a',
+          ring: '#00A3FF'
         },
       },
       borderRadius: {

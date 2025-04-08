@@ -43,7 +43,7 @@ const FAQ = () => {
   useOutsideClick(ref, () => setActiveQuestion(null));
 
   return (
-    <section className="py-24 bg-black">
+    <section className="py-24 bg-[#0a0a0a] grid-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <motion.div
@@ -51,9 +51,9 @@ const FAQ = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block bg-red-500/10 rounded-full px-4 py-1 mb-4 border border-red-500/20"
+            className="inline-block bg-[#00A3FF]/10 rounded-full px-4 py-1 mb-4 border border-[#00A3FF]/20"
           >
-            <span className="text-red-400">FAQs</span>
+            <span className="text-[#00A3FF]">FAQs</span>
           </motion.div>
           
           <motion.h2
@@ -88,7 +88,7 @@ const FAQ = () => {
               <motion.div
                 layoutId={`faq-${activeQuestion.question}-${id}`}
                 ref={ref}
-                className="w-full max-w-2xl bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-xl overflow-hidden"
+                className="w-full max-w-2xl bg-gradient-to-b from-[#0f1722] to-[#0a0a0a] border border-gray-800 rounded-xl overflow-hidden"
               >
                 <div className="p-6">
                   <motion.h3
@@ -105,10 +105,10 @@ const FAQ = () => {
                     {activeQuestion.answer}
                   </motion.p>
                 </div>
-                <div className="bg-gray-900 p-4 flex justify-end">
+                <div className="bg-[#0f1722] p-4 flex justify-end">
                   <button
                     onClick={() => setActiveQuestion(null)}
-                    className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors"
+                    className="bg-[#00A3FF] hover:bg-[#0080ff] text-white px-4 py-2 rounded-lg transition-colors"
                   >
                     Close
                   </button>
@@ -128,7 +128,7 @@ const FAQ = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => setActiveQuestion(faq)}
-              className="p-4 bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-xl mb-4 cursor-pointer hover:border-red-500/30 transition-all duration-300"
+              className="p-4 bg-gradient-to-r from-[#0f1722] to-[#0a0a0a] border border-gray-800 rounded-xl mb-4 cursor-pointer hover:border-[#00A3FF]/30 transition-all duration-300"
             >
               <div className="flex justify-between items-center">
                 <motion.h3
@@ -147,7 +147,7 @@ const FAQ = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-red-500 h-5 w-5"
+                  className="text-[#00A3FF] h-5 w-5"
                 >
                   <path d="M12 5v14M5 12h14" />
                 </svg>

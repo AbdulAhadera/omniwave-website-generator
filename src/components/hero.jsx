@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="relative h-screen flex overflow-hidden" style={{ backgroundColor: "#141414" }}>
+      className="relative h-screen flex overflow-hidden grid-background">
       <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",
@@ -26,9 +26,9 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="inline-block bg-black/30 backdrop-blur-sm rounded-full px-4 py-1 mb-8 border border-white/10"
+          className="inline-block bg-[#00A3FF]/20 backdrop-blur-sm rounded-full px-4 py-1 mb-8 border border-[#00A3FF]/30"
         >
-          {/* <span className="text-white">The Future Is Here.</span> */}
+          <span className="text-[#00A3FF]">The Future Is Here.</span>
         </motion.div>
 
         <motion.h1
@@ -62,13 +62,13 @@ const Hero = () => {
         >
           <Link
             to="/contact-form"
-            className="bg-gradient-to-r from-[#007bff] to-[#00BFFF] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+            className="bg-[#00A3FF] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
           >
             Get Started
           </Link>
           <a
             href="#features"
-            className="bg-white/10 backdrop-blur-md text-white font-medium py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+            className="bg-black/30 backdrop-blur-md text-white font-medium py-3 px-8 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300"
           >
             Learn More
           </a>

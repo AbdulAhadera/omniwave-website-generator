@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24" style={{ backgroundColor: "#141414" }}>
+    <section id="contact" className="py-24 bg-[#0a0a0a] grid-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -12,9 +12,9 @@ const Contact = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block bg-red-500/10 rounded-full px-4 py-1 mb-4 border border-red-500/20"
+            className="inline-block bg-[#00A3FF]/10 rounded-full px-4 py-1 mb-4 border border-[#00A3FF]/20"
           >
-            <span className="text-red-400">CONTACT US</span>
+            <span className="text-[#00A3FF]">CONTACT US</span>
           </motion.div>
           
           <motion.h2
@@ -44,7 +44,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 md:p-12 rounded-2xl border border-gray-800" style={{ backgroundColor: "#222831" }}
+            className="p-8 md:p-12 rounded-2xl border border-gray-800 bg-[#0f1722]"
           >
             <div className="grid gap-6">
               <div>
@@ -70,7 +70,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-8 md:p-12 rounded-2xl border border-gray-800 flex flex-col justify-between" style={{ backgroundColor: "#222831" }}
+            className="p-8 md:p-12 rounded-2xl border border-gray-800 flex flex-col justify-between bg-[#0f1722]"
           >
             <div className="mb-8">
               <h3 className="text-2xl font-bold mb-4 text-white">Experience Our Demo</h3>
@@ -81,7 +81,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="bg-red-500/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-red-500 shrink-0">
+                <div className="bg-[#00A3FF]/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-[#00A3FF] shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -105,7 +105,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="bg-red-500/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-red-500 shrink-0">
+                <div className="bg-[#00A3FF]/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-[#00A3FF] shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -132,7 +132,7 @@ const Contact = () => {
 
             <Link
               to="/contact-form"
-              className="mt-8 inline-block bg-gradient-to-r from-[#007bff] to-[#00BFFF] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center"
+              className="mt-8 inline-block bg-[#00A3FF] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center"
             >
               Request Demo
             </Link>

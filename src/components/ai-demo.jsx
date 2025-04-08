@@ -19,7 +19,7 @@ const AiDemo = () => {
   };
 
   return (
-    <section id="demo" className="py-24 bg-gradient-to-b from-[var(--color-boxes)] to-[var(--color-background)]">
+    <section id="demo" className="py-24 bg-[#0a0a0a] grid-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -27,9 +27,9 @@ const AiDemo = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block bg-red-500/10 rounded-full px-4 py-1 mb-4 border border-red-500/20"
+            className="inline-block bg-[#00A3FF]/20 rounded-full px-4 py-1 mb-4 border border-[#00A3FF]/30"
           >
-            <span className="text-red-400">EXPERIENCE OUR TECHNOLOGY</span>
+            <span className="text-[#00A3FF]">EXPERIENCE OUR TECHNOLOGY</span>
           </motion.div>
           
           <motion.h2
@@ -59,21 +59,21 @@ const AiDemo = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="box-background rounded-2xl border border-gray-800 overflow-hidden"
+            className="bg-[#0f1722] rounded-2xl border border-gray-800 overflow-hidden"
           >
             <div className="p-8">
               <div className="flex justify-between mb-4">
                 <div className="text-white font-semibold">AI Voice Assistant Demo</div>
                 <div className="flex gap-2">
-                  <span className="h-2 w-2 rounded-full bg-red-500"></span>
+                  <span className="h-2 w-2 rounded-full bg-[#00A3FF]"></span>
                   <span className="h-2 w-2 rounded-full bg-gray-500"></span>
                 </div>
               </div>
 
-              <div className="h-64 overflow-y-auto bg-gray-900/50 rounded-lg p-4 mb-6 border border-gray-800">
+              <div className="h-64 overflow-y-auto bg-[#0a0a0a]/50 rounded-lg p-4 mb-6 border border-gray-800">
                 <div className="flex gap-3 mb-4">
-                  <div className="bg-red-500/20 p-2 rounded-full h-8 w-8 flex items-center justify-center">
-                    <Headphones className="h-4 w-4 text-red-400" />
+                  <div className="bg-[#00A3FF]/20 p-2 rounded-full h-8 w-8 flex items-center justify-center">
+                    <Headphones className="h-4 w-4 text-[#00A3FF]" />
                   </div>
                   <div className="bg-gray-800 rounded-lg p-3 text-gray-300 text-sm max-w-[80%]">
                     Hello! I'm your OmnisolAi assistant. How can I help you today?
@@ -88,14 +88,14 @@ const AiDemo = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type your message here..."
-                    className="w-full bg-gray-900/80 border border-gray-800 rounded-lg py-3 px-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-red-500/50"
+                    className="w-full bg-gray-900/80 border border-gray-800 rounded-lg py-3 px-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#00A3FF]/50"
                   />
                   <button
                     type="button"
                     onClick={toggleRecording}
                     className={`p-3 rounded-lg flex items-center justify-center ${
                       isRecording
-                        ? "bg-red-500 text-white"
+                        ? "bg-[#00A3FF] text-white"
                         : "bg-gray-800 text-gray-400 hover:bg-gray-700"
                     }`}
                   >
@@ -103,7 +103,7 @@ const AiDemo = () => {
                   </button>
                   <button
                     type="submit"
-                    className="bg-red-500 hover:bg-red-600 text-white p-3 rounded-lg"
+                    className="bg-[#00A3FF] hover:bg-[#0080ff] text-white p-3 rounded-lg"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -149,8 +149,8 @@ const AiDemo = () => {
               Experience the Future of Customer Interaction
             </h3>
             <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="bg-red-500/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-red-500 shrink-0">
+              <div className="flex gap-4 items-start">
+                <div className="bg-[#00A3FF]/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-[#00A3FF] shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -174,8 +174,8 @@ const AiDemo = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
-                <div className="bg-red-500/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-red-500 shrink-0">
+              <div className="flex gap-4 items-start">
+                <div className="bg-[#00A3FF]/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-[#00A3FF] shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -199,8 +199,8 @@ const AiDemo = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
-                <div className="bg-red-500/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-red-500 shrink-0">
+              <div className="flex gap-4 items-start">
+                <div className="bg-[#00A3FF]/10 p-3 rounded-full h-12 w-12 flex items-center justify-center text-[#00A3FF] shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -234,7 +234,7 @@ const AiDemo = () => {
             >
               <Link
                 to="/contact-form"
-                className="bg-gradient-to-r from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white font-medium py-3 px-8 rounded-full inline-block transition-all duration-300 transform hover:scale-105"
+                className="bg-[#00A3FF] text-white font-medium py-3 px-8 rounded-full inline-block transition-all duration-300 transform hover:scale-105"
               >
                 Request Full Demo
               </Link>
